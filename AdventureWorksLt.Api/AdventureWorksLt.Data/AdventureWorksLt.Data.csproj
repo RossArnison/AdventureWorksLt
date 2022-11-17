@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <RootNamespace>AdventureWorksLt.Data</RootNamespace>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="7.0.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Update="Entities\Product.Design.cs">
+        <DependentUpon>Product.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Entities\ProductCategory.Design.cs">
+        <DependentUpon>ProductCategory.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Entities\ProductDescription.Design.cs">
+        <DependentUpon>ProductDescription.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Entities\ProductModel.Design.cs">
+        <DependentUpon>ProductModel.cs</DependentUpon>
+      </Compile>
+      <Compile Update="Entities\ProductModelDescription.Design.cs">
+        <DependentUpon>ProductModelDescription.cs</DependentUpon>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\AdventureWorksLt.Shared\AdventureWorksLt.Shared.csproj" />
+    </ItemGroup>
+
+</Project>

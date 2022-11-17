@@ -1,0 +1,23 @@
+<div class="edit">
+  <p>{{ product && product.productNumber }}</p>
+
+  <mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput type="text" [(ngModel)]="name">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Price</mat-label>
+    <input matInput [(ngModel)]="listPrice">
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Color</mat-label>
+    <input matInput [(ngModel)]="product.color">
+  </mat-form-field>
+
+  <div mat-dialog-actions>
+    <button mat-button [mat-dialog-close]="product">Apply</button>
+    <button mat-button mat-dialog-close="product">Close</button>
+  </div>
+</div>

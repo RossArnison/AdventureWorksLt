@@ -1,0 +1,26 @@
+.table-buttons {
+  display: flex;
+  justify-content: center;
+
+  & button {
+    background-color: white;
+    padding: 10px;
+
+    border: 1px solid lightgray;
+
+    &:hover:enabled {
+      background-color: rgba(0, 0, 0, 0.02);
+      cursor: pointer;
+    }
+
+    &:first-child {
+      border-radius: 15px 0 0 15px;
+      border-right: 0;
+    }
+
+    &:last-child {
+      border-radius: 0 15px 15px 0;
+      border-left: 0;
+    }
+  }
+}

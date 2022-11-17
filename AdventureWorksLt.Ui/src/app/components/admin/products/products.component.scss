@@ -1,0 +1,9 @@
+mat-cell, mat-header-cell {
+  &:nth-last-child(2) {
+    max-width: 150px;
+  }
+
+  &:last-child {
+    max-width: 100px;
+  }
+}

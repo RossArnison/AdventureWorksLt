@@ -1,0 +1,24 @@
+<h1>Admin</h1>
+
+<div class="table-buttons">
+  <button (click)="currentTable = tableEnum.products"
+          [disabled]="currentTable == tableEnum.products">
+    Products
+  </button>
+
+  <button (click)="currentTable = tableEnum.categories"
+          [disabled]="currentTable == tableEnum.categories">
+    Categories
+  </button>
+
+  <button (click)="currentTable = tableEnum.descriptions"
+          [disabled]="currentTable == tableEnum.descriptions">
+    Descriptions
+  </button>
+</div>
+
+<admin-products *ngIf="currentTable == tableEnum.products"></admin-products>
+
+<admin-product-categories *ngIf="currentTable == tableEnum.categories"></admin-product-categories>
+
+<admin-product-descriptions *ngIf="currentTable == tableEnum.descriptions"></admin-product-descriptions>

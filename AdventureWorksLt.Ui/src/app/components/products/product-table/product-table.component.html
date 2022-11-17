@@ -1,0 +1,38 @@
+<mat-form-field>
+  <input matInput placeholder="Search" (keyup)="applyFilter($event)">
+</mat-form-field>
+
+<mat-table #table [dataSource]="tableData" matSort>
+
+  <ng-container matColumnDef="image">
+    <mat-header-cell  *matHeaderCellDef> Thumbnail </mat-header-cell>
+    <mat-cell *matCellDef="let product">
+      <img [src]="product.image" />
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef mat-sort-header> Name </mat-header-cell>
+    <mat-cell *matCellDef="let product" [matTooltip]="product.description"> {{ product.name }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="model">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header> Model </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.model }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="category">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header> Category </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.category }} </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="listPrice">
+    <mat-header-cell  *matHeaderCellDef mat-sort-header> Price </mat-header-cell>
+    <mat-cell *matCellDef="let product"> {{ product.listPrice | currency:'GBP' }} </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="columns; sticky:true"></mat-header-row>
+  <mat-row *matRowDef="let product; columns: columns;"></mat-row>
+</mat-table>
+
+<mat-paginator #paginator [pageSizeOptions]="[5, 10, 25, 50, 100, 500]"></mat-paginator>
